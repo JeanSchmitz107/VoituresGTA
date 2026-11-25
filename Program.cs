@@ -1,4 +1,6 @@
-﻿namespace VoituresGTA;
+﻿using System.Security.Cryptography;
+
+namespace VoituresGTA;
 /*
     CONSIGNES
     1. Déclarer un tableau contenant cinq véhicules :
@@ -17,6 +19,56 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+        string[] car = ["Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard"];
+
+
+        remplaced(car);
+
+    }
+
+
+
+
+
+
+    static void remplaced(string[] car)
+    {
+        garage(car);
+
+        int i_remplace = car_i_remplace();
+
+        string name_remplace = car_name_remplace(car, i_remplace);
+
+        car[i_remplace - 1] = name_remplace;
+
+        garage(car);
+    }
+
+
+
+    static void garage(string[] car)
+    {
+        for (int i = 0; i < car.Length; i++)
+        {
+            Console.WriteLine((i + 1) + ". " + car[i]);
+        }
+    }
+
+    static int car_i_remplace()
+    {
+        int i_remplace = 0;
+        //while (0 < i_remplace && i_remplace < car.Length)
+        //{
+        Console.WriteLine("Quelles véhicule veux tu remplacer ? (de 1 à 5)");
+        i_remplace = Convert.ToInt32(Console.ReadLine());
+        //}
+        return i_remplace;
+    }
+
+    static string car_name_remplace(string[] car, int i_remplace)
+    {
+        Console.WriteLine("Quelle nom veux tu pour remplacer : " + car[i_remplace - 1] + " ?");
+        string name_remplace = Console.ReadLine();
+        return name_remplace;
     }
 }
