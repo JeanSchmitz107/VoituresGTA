@@ -59,8 +59,8 @@ class Program
         int i_remplace = 0;
         //while (0 < i_remplace && i_remplace < car.Length)
         //{
-        Console.WriteLine("Quelles véhicule veux tu remplacer ? (de 1 à 5)");
-        i_remplace = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Quelles véhicule veux tu remplacer ? (de 1 à 5)");
+            i_remplace = Convert.ToInt32(Console.ReadLine());
         //}
         return i_remplace;
     }
